@@ -12,6 +12,7 @@
 package org.usfirst.frc5137.TestBot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5137.TestBot.Robot;
+import org.usfirst.frc5137.TestBot.RobotMap;
 
 /**
  *
@@ -43,6 +44,7 @@ public class Drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        RobotMap.driveBaseChassis.arcadeDrive(Robot.oi.getDriveStick());
     }
 
     // Make this return true when this Command no longer needs to run execute()
