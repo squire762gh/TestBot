@@ -141,7 +141,25 @@ Children:
         value: *id004
     Base: Subsystem
     Name: Shooter
-  - Children: []
+  - Children:
+    - Children: []
+      Properties:
+        Type: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id001
+          default: Spark
+          name: Type
+          validators: null
+          value: Spark
+        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id002
+          default: '0'
+          name: Output Channel (PWM)
+          validators: *id003
+          value: '2'
+        Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+          name: Inverted, validators: null, value: false}
+      Base: Speed Controller
+      Name: Motor
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
@@ -158,7 +176,7 @@ Children:
         validators: null
         value: *id004
     Base: Subsystem
-    Name: SlideDrive
+    Name: Slide Drive
   Properties: {}
   Base: Subsystems
   Name: Subsystems
