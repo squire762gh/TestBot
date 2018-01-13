@@ -184,13 +184,23 @@ Children:
   - Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: ['0', '1', '2', '3', '4', '5']
+        choices: &id005 ['0', '1', '2', '3', '4', '5']
         default: 1
         name: Number
-        validators: [Joystick]
+        validators: &id006 [Joystick]
         value: '0'
     Base: Joystick
     Name: Drive Stick
+  - Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id005
+        default: 1
+        name: Number
+        validators: *id006
+        value: '1'
+    Base: Joystick
+    Name: Drive Stick 2
   Properties: {}
   Base: OI
   Name: Operator Interface
@@ -253,10 +263,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Slide Drive}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id005 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id005
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
